@@ -1,0 +1,111 @@
+Microsoft Windows [Version 10.0.18362.175]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2019. Все права защищены.
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe .\gray.c --save-temps -march=rv32i -mabi=ilp32 -O1 -v >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc --save-temps -march=rv32i -mabi=ilp32 -O1 -v main.c vstavka.c >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-ar.exe -rsc vstav.a vstavka.o
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-ar.exe vstav.a
+c:\users\dmitry\desktop\korenev\podgotovka\riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32\bin\../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ar.exe: invalid option -- .
+Usage: c:\users\dmitry\desktop\korenev\podgotovka\riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32\bin\../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ar.exe [emulation options] [-]{dmpqrstx}[abcDfilMNoOPsSTuvV] [--plugin <name>] [member-name] [count] archive-file file...
+       c:\users\dmitry\desktop\korenev\podgotovka\riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32\bin\../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ar.exe -M [<mri-script]
+ commands:
+  d            - delete file(s) from the archive
+  m[ab]        - move file(s) in the archive
+  p            - print file(s) found in the archive
+  q[f]         - quick append file(s) to the archive
+  r[ab][f][u]  - replace existing or insert new file(s) into the archive
+  s            - act as ranlib
+  t[O][v]      - display contents of the archive
+  x[o]         - extract file(s) from the archive
+ command specific modifiers:
+  [a]          - put file(s) after [member-name]
+  [b]          - put file(s) before [member-name] (same as [i])
+  [D]          - use zero for timestamps and uids/gids
+  [U]          - use actual timestamps and uids/gids (default)
+  [N]          - use instance [count] of name
+  [f]          - truncate inserted file names
+  [P]          - use full path names when matching
+  [o]          - preserve original dates
+  [O]          - display offsets of files in the archive
+  [u]          - only replace files that are newer than current archive contents
+ generic modifiers:
+  [c]          - do not warn if the library had to be created
+  [s]          - create an archive index (cf. ranlib)
+  [S]          - do not build a symbol table
+  [T]          - make a thin archive
+  [v]          - be verbose
+  [V]          - display the version number
+  @<file>      - read options from <file>
+  --target=BFDNAME - specify the target object format as BFDNAME
+ optional:
+  --plugin <p> - load the specified plugin
+ emulation options:
+  No emulation specific options
+c:\users\dmitry\desktop\korenev\podgotovka\riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32\bin\../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ar.exe: supported targets: elf64-littleriscv elf32-littleriscv elf64-little elf64-big elf32-little elf32-big plugin srec symbolsrec verilog tekhex binary ihex
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.o vstav.a vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.o vstav.a >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.o vstav.a >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.o vstav.a -o vstav.out >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.c vstavka.c >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.c vstavka.c >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -c vstavka.c -o vstavka.o
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -c main.c -o vstavka.o
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-ar.exe -rsc vs.a vstavka.o
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 --save-temps  main.c vs.a -o a.out
+c:/users/dmitry/desktop/korenev/podgotovka/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld.exe: main.o: in function `main':
+main.c:(.text+0x4c): undefined reference to `sorting_by_insertion'
+collect2.exe: error: ld returned 1 exit status
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 --save-temps  main.c vs.a -o static.out
+c:/users/dmitry/desktop/korenev/podgotovka/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/../../../../riscv64-unknown-elf/bin/ld.exe: main.o: in function `main':
+main.c:(.text+0x4c): undefined reference to `sorting_by_insertion'
+collect2.exe: error: ld returned 1 exit status
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 --save-temps  main.c vs.a -o static.out
+riscv64-unknown-elf-gcc-8.3.0.exe: error: main.c: No such file or directory
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 --save-temps  main.c vstav.a -o static.out
+riscv64-unknown-elf-gcc-8.3.0.exe: error: main.c: No such file or directory
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 --save-temps  main.c .\vstav.a -o static.out
+riscv64-unknown-elf-gcc-8.3.0.exe: error: main.c: No such file or directory
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc --save-temps -march=rv32i -mabi=ilp32 -O1 -v main.c vstavka.c >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 --save-temps  main.c .\vstav.a -o static.out
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 --save-temps  main.c .\vstav.a -o static.out
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-objump.exe -t .\static.out > _symtable
+"riscv64-unknown-elf-objump.exe" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>riscv64-unknown-elf-objdump.exe -t .\static.out > _symtable
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>mingw32-make.exe
+mingw32-make.exe: *** No targets specified and no makefile found.  Stop.
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>mingw32-make.exe
+mingw32-make.exe: *** No targets specified and no makefile found.  Stop.
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka1>

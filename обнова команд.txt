@@ -1,0 +1,450 @@
+Microsoft Windows [Version 10.0.18362.175]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2019. Все права защищены.
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe .\gray.c --save-temps -march=rv32i -mabi=ilp32 -O1 -v >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc --save-temps -march=rv32i -mabi=ilp32 -O1 -v main.c vstavka.c >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump -t vstavka.o main.o
+
+vstavka.o:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+00000000 l    df *ABS*  00000000 vstavka.c
+00000000 l    d  .text  00000000 .text
+00000000 l    d  .data  00000000 .data
+00000000 l    d  .bss   00000000 .bss
+00000080 l       .text  00000000 .L2
+0000002c l       .text  00000000 .L3
+00000018 l       .text  00000000 .L6
+0000001c l       .text  00000000 .L4
+00000054 l       .text  00000000 .L5
+00000000 l    d  .comment       00000000 .comment
+00000000 l    d  .riscv.attributes      00000000 .riscv.attributes
+00000000 g     F .text  00000090 sorting_by_insertion
+
+
+
+main.o:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+00000000 l    df *ABS*  00000000 main.c
+00000000 l    d  .text  00000000 .text
+00000000 l    d  .data  00000000 .data
+00000000 l    d  .bss   00000000 .bss
+00000000 l    d  .rodata        00000000 .rodata
+00000000 l       .rodata        00000000 .LANCHOR0
+00000000 l    d  .rodata.str1.4 00000000 .rodata.str1.4
+00000000 l       .rodata.str1.4 00000000 .LC1
+00000060 l       .text  00000000 .L2
+00000000 l    d  .comment       00000000 .comment
+00000000 l    d  .riscv.attributes      00000000 .riscv.attributes
+00000000 g     F .text  00000094 main
+00000000         *UND*  00000000 sorting_by_insertion
+00000000         *UND*  00000000 printf
+
+
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump -d -M no-aliases -j .text vstavka.o main.o
+
+vstavka.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <sorting_by_insertion>:
+   0:   00100793                addi    a5,zero,1
+   4:   06b7de63                bge     a5,a1,80 <.L2>
+   8:   00050f13                addi    t5,a0,0
+   c:   00450e13                addi    t3,a0,4
+  10:   00100e93                addi    t4,zero,1
+  14:   0180006f                jal     zero,2c <.L3>
+
+00000018 <.L6>:
+  18:   000e8713                addi    a4,t4,0
+
+0000001c <.L4>:
+  1c:   001e8e93                addi    t4,t4,1
+  20:   004f0f13                addi    t5,t5,4
+  24:   004e0e13                addi    t3,t3,4
+  28:   05d58c63                beq     a1,t4,80 <.L2>
+
+0000002c <.L3>:
+  2c:   ffd056e3                bge     zero,t4,18 <.L6>
+  30:   000f0893                addi    a7,t5,0
+  34:   000f2603                lw      a2,0(t5)
+  38:   000e0813                addi    a6,t3,0
+  3c:   000e2683                lw      a3,0(t3)
+  40:   000e0793                addi    a5,t3,0
+  44:   000e8713                addi    a4,t4,0
+  48:   ff8e0313                addi    t1,t3,-8
+  4c:   41e30333                sub     t1,t1,t5
+  50:   fcc6d6e3                bge     a3,a2,1c <.L4>
+
+00000054 <.L5>:
+  54:   00d8a023                sw      a3,0(a7)
+  58:   00c82023                sw      a2,0(a6)
+  5c:   fff70713                addi    a4,a4,-1
+  60:   fa070ee3                beq     a4,zero,1c <.L4>
+  64:   006888b3                add     a7,a7,t1
+  68:   ff87a603                lw      a2,-8(a5)
+  6c:   ffc80813                addi    a6,a6,-4
+  70:   ffc78793                addi    a5,a5,-4
+  74:   0007a683                lw      a3,0(a5)
+  78:   fcc6cee3                blt     a3,a2,54 <.L5>
+  7c:   fa1ff06f                jal     zero,1c <.L4>
+
+00000080 <.L2>:
+  80:   00271713                slli    a4,a4,0x2
+  84:   00e50733                add     a4,a0,a4
+  88:   00072503                lw      a0,0(a4)
+  8c:   00008067                jalr    zero,0(ra)
+
+main.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+   0:   fd010113                addi    sp,sp,-48
+   4:   02112623                sw      ra,44(sp)
+   8:   02812423                sw      s0,40(sp)
+   c:   02912223                sw      s1,36(sp)
+  10:   03212023                sw      s2,32(sp)
+  14:   000007b7                lui     a5,0x0
+  18:   00078793                addi    a5,a5,0 # 0 <main>
+  1c:   0007a583                lw      a1,0(a5)
+  20:   0047a603                lw      a2,4(a5)
+  24:   0087a683                lw      a3,8(a5)
+  28:   00c7a703                lw      a4,12(a5)
+  2c:   0107a783                lw      a5,16(a5)
+  30:   00b12623                sw      a1,12(sp)
+  34:   00c12823                sw      a2,16(sp)
+  38:   00d12a23                sw      a3,20(sp)
+  3c:   00e12c23                sw      a4,24(sp)
+  40:   00f12e23                sw      a5,28(sp)
+  44:   00500593                addi    a1,zero,5
+  48:   00c10513                addi    a0,sp,12
+  4c:   00000097                auipc   ra,0x0
+  50:   000080e7                jalr    ra,0(ra) # 4c <main+0x4c>
+  54:   00c10413                addi    s0,sp,12
+  58:   02010913                addi    s2,sp,32
+  5c:   000004b7                lui     s1,0x0
+
+00000060 <.L2>:
+  60:   00042583                lw      a1,0(s0)
+  64:   00048513                addi    a0,s1,0 # 0 <main>
+  68:   00000097                auipc   ra,0x0
+  6c:   000080e7                jalr    ra,0(ra) # 68 <.L2+0x8>
+  70:   00440413                addi    s0,s0,4
+  74:   ff2416e3                bne     s0,s2,60 <.L2>
+  78:   00000513                addi    a0,zero,0
+  7c:   02c12083                lw      ra,44(sp)
+  80:   02812403                lw      s0,40(sp)
+  84:   02412483                lw      s1,36(sp)
+  88:   02012903                lw      s2,32(sp)
+  8c:   03010113                addi    sp,sp,48
+  90:   00008067                jalr    zero,0(ra)
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -h vstavka.o
+
+vstavka.o:     file format elf32-littleriscv
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000090  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  000000c4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  000000c4  2**0
+                  ALLOC
+  3 .comment      00000029  00000000  00000000  000000c4  2**0
+                  CONTENTS, READONLY
+  4 .riscv.attributes 0000001c  00000000  00000000  000000ed  2**0
+                  CONTENTS, READONLY
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -d -M no-aliases -j .text vstavka.o
+
+vstavka.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <sorting_by_insertion>:
+   0:   00100793                addi    a5,zero,1
+   4:   06b7de63                bge     a5,a1,80 <.L2>
+   8:   00050f13                addi    t5,a0,0
+   c:   00450e13                addi    t3,a0,4
+  10:   00100e93                addi    t4,zero,1
+  14:   0180006f                jal     zero,2c <.L3>
+
+00000018 <.L6>:
+  18:   000e8713                addi    a4,t4,0
+
+0000001c <.L4>:
+  1c:   001e8e93                addi    t4,t4,1
+  20:   004f0f13                addi    t5,t5,4
+  24:   004e0e13                addi    t3,t3,4
+  28:   05d58c63                beq     a1,t4,80 <.L2>
+
+0000002c <.L3>:
+  2c:   ffd056e3                bge     zero,t4,18 <.L6>
+  30:   000f0893                addi    a7,t5,0
+  34:   000f2603                lw      a2,0(t5)
+  38:   000e0813                addi    a6,t3,0
+  3c:   000e2683                lw      a3,0(t3)
+  40:   000e0793                addi    a5,t3,0
+  44:   000e8713                addi    a4,t4,0
+  48:   ff8e0313                addi    t1,t3,-8
+  4c:   41e30333                sub     t1,t1,t5
+  50:   fcc6d6e3                bge     a3,a2,1c <.L4>
+
+00000054 <.L5>:
+  54:   00d8a023                sw      a3,0(a7)
+  58:   00c82023                sw      a2,0(a6)
+  5c:   fff70713                addi    a4,a4,-1
+  60:   fa070ee3                beq     a4,zero,1c <.L4>
+  64:   006888b3                add     a7,a7,t1
+  68:   ff87a603                lw      a2,-8(a5)
+  6c:   ffc80813                addi    a6,a6,-4
+  70:   ffc78793                addi    a5,a5,-4
+  74:   0007a683                lw      a3,0(a5)
+  78:   fcc6cee3                blt     a3,a2,54 <.L5>
+  7c:   fa1ff06f                jal     zero,1c <.L4>
+
+00000080 <.L2>:
+  80:   00271713                slli    a4,a4,0x2
+  84:   00e50733                add     a4,a0,a4
+  88:   00072503                lw      a0,0(a4)
+  8c:   00008067                jalr    zero,0(ra)
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -f .\a.out
+
+.\a.out:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00010090
+
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -E vstavka.c -o vstavka.i >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -s -j .text .\vstavka.o
+
+.\vstavka.o:     file format elf32-littleriscv
+
+Contents of section .text:
+ 0000 93071000 63deb706 130f0500 130e4500  ....c.........E.
+ 0010 930e1000 6f008001 13870e00 938e1e00  ....o...........
+ 0020 130f4f00 130e4e00 638cd505 e356d0ff  ..O...N.c....V..
+ 0030 93080f00 03260f00 13080e00 83260e00  .....&.......&..
+ 0040 93070e00 13870e00 13038eff 3303e341  ............3..A
+ 0050 e3d6c6fc 23a0d800 2320c800 1307f7ff  ....#...# ......
+ 0060 e30e07fa b3886800 03a687ff 1308c8ff  ......h.........
+ 0070 9387c7ff 83a60700 e3cec6fc 6ff01ffa  ............o...
+ 0080 13172700 3307e500 03250700 67800000  ..'.3....%..g...
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -d -M no-aliases -j .text .\vstavka.o
+
+.\vstavka.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <sorting_by_insertion>:
+   0:   00100793                addi    a5,zero,1
+   4:   06b7de63                bge     a5,a1,80 <.L2>
+   8:   00050f13                addi    t5,a0,0
+   c:   00450e13                addi    t3,a0,4
+  10:   00100e93                addi    t4,zero,1
+  14:   0180006f                jal     zero,2c <.L3>
+
+00000018 <.L6>:
+  18:   000e8713                addi    a4,t4,0
+
+0000001c <.L4>:
+  1c:   001e8e93                addi    t4,t4,1
+  20:   004f0f13                addi    t5,t5,4
+  24:   004e0e13                addi    t3,t3,4
+  28:   05d58c63                beq     a1,t4,80 <.L2>
+
+0000002c <.L3>:
+  2c:   ffd056e3                bge     zero,t4,18 <.L6>
+  30:   000f0893                addi    a7,t5,0
+  34:   000f2603                lw      a2,0(t5)
+  38:   000e0813                addi    a6,t3,0
+  3c:   000e2683                lw      a3,0(t3)
+  40:   000e0793                addi    a5,t3,0
+  44:   000e8713                addi    a4,t4,0
+  48:   ff8e0313                addi    t1,t3,-8
+  4c:   41e30333                sub     t1,t1,t5
+  50:   fcc6d6e3                bge     a3,a2,1c <.L4>
+
+00000054 <.L5>:
+  54:   00d8a023                sw      a3,0(a7)
+  58:   00c82023                sw      a2,0(a6)
+  5c:   fff70713                addi    a4,a4,-1
+  60:   fa070ee3                beq     a4,zero,1c <.L4>
+  64:   006888b3                add     a7,a7,t1
+  68:   ff87a603                lw      a2,-8(a5)
+  6c:   ffc80813                addi    a6,a6,-4
+  70:   ffc78793                addi    a5,a5,-4
+  74:   0007a683                lw      a3,0(a5)
+  78:   fcc6cee3                blt     a3,a2,54 <.L5>
+  7c:   fa1ff06f                jal     zero,1c <.L4>
+
+00000080 <.L2>:
+  80:   00271713                slli    a4,a4,0x2
+  84:   00e50733                add     a4,a0,a4
+  88:   00072503                lw      a0,0(a4)
+  8c:   00008067                jalr    zero,0(ra)
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -s -j .comment .\vstavka.o
+
+.\vstavka.o:     file format elf32-littleriscv
+
+Contents of section .comment:
+ 0000 00474343 3a202853 69466976 65204743  .GCC: (SiFive GC
+ 0010 4320382e 332e302d 32303230 2e30342e  C 8.3.0-2020.04.
+ 0020 31292038 2e332e30 00                 1) 8.3.0.
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -f .\a.out
+
+.\a.out:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00010090
+
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -h .\a.out
+
+.\a.out:     file format elf32-littleriscv
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00014908  00010074  00010074  00000074  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata       00000cfc  00024980  00024980  00014980  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .eh_frame     000000b4  00026000  00026000  00016000  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  3 .init_array   00000008  000260b4  000260b4  000160b4  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .fini_array   00000004  000260bc  000260bc  000160bc  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .data         0000099c  000260c0  000260c0  000160c0  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .sdata        0000002c  00026a60  00026a60  00016a60  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .sbss         00000014  00026a8c  00026a8c  00016a8c  2**2
+                  ALLOC
+  8 .bss          00000048  00026aa0  00026aa0  00016a8c  2**2
+                  ALLOC
+  9 .comment      00000028  00000000  00000000  00016a8c  2**0
+                  CONTENTS, READONLY
+ 10 .riscv.attributes 0000001c  00000000  00000000  00016ab4  2**0
+                  CONTENTS, READONLY
+ 11 .debug_aranges 00000218  00000000  00000000  00016ad0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_info   0000924d  00000000  00000000  00016ce8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_abbrev 00001c52  00000000  00000000  0001ff35  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_line   0000a0d0  00000000  00000000  00021b87  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_frame  000002dc  00000000  00000000  0002bc58  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_str    00001382  00000000  00000000  0002bf34  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .debug_loc    000089e7  00000000  00000000  0002d2b6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 18 .debug_ranges 000012b0  00000000  00000000  00035c9d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-objdump.exe -j .text -d -M no-aliases a.out >a.ds
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -E vstavka.c -o vstavka.i >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>dir
+ Том в устройстве C не имеет метки.
+ Серийный номер тома: E062-D3FE
+
+ Содержимое папки C:\Users\Dmitry\Desktop\Korenev\podgotovka
+
+09.03.2023  00:31    <DIR>          .
+09.03.2023  00:31    <DIR>          ..
+09.03.2023  00:31         1 021 383 a.ds
+08.03.2023  23:48           234 532 a.out
+09.03.2023  00:43             5 402 log
+08.03.2023  23:47               262 main.c
+08.03.2023  23:48            48 070 main.i
+08.03.2023  23:48             1 332 main.o
+08.03.2023  23:48             1 012 main.s
+14.07.2020  04:14    <DIR>          riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32
+08.03.2023  23:47               411 vstavka.c
+08.03.2023  23:47               101 vstavka.h
+09.03.2023  00:43            48 216 vstavka.i
+08.03.2023  23:48             1 100 vstavka.o
+08.03.2023  23:48               865 vstavka.s
+              12 файлов      1 362 686 байт
+               3 папок  80 215 891 968 байт свободно
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -s vstavka.i -o vstavka.s >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>dir
+ Том в устройстве C не имеет метки.
+ Серийный номер тома: E062-D3FE
+
+ Содержимое папки C:\Users\Dmitry\Desktop\Korenev\podgotovka
+
+09.03.2023  00:49    <DIR>          .
+09.03.2023  00:49    <DIR>          ..
+09.03.2023  00:31         1 021 383 a.ds
+08.03.2023  23:48           234 532 a.out
+09.03.2023  00:49             7 821 log
+08.03.2023  23:47               262 main.c
+08.03.2023  23:48            48 070 main.i
+08.03.2023  23:48             1 332 main.o
+08.03.2023  23:48             1 012 main.s
+14.07.2020  04:14    <DIR>          riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32
+08.03.2023  23:47               411 vstavka.c
+08.03.2023  23:47               101 vstavka.h
+09.03.2023  00:43            48 216 vstavka.i
+08.03.2023  23:48             1 100 vstavka.o
+              11 файлов      1 364 240 байт
+               3 папок  80 218 173 440 байт свободно
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -o1 -v -s vstavka.i -o vstavka.s >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -o1 -v -S vstavka.i -o vstavka.s >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -o1 -v -s vstavka.i -o vstavka.s >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -S vstavka.i -o vstavka.s >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -S vstavka.s -o vstavka.o >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -c vstavka.s -o vstavka.o >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v vstavka.o -o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v vstavka.o -o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -c vstavka.s -o vstavka.o >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -S vstavka.s -o vstavka.o >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v vstavka.o -o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -S vstavka.s -o vstavka.o >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -c vstavka.s -o vstavka.o >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v vstavka.o -o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v vstavka.o -o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v vstavka.o -o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v vstavka.o vstavka.exe >log 2>&1
+
+C:\Users\Dmitry\Desktop\Korenev\podgotovka>

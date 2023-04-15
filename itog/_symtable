@@ -1,0 +1,328 @@
+
+.\static.out:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+00010074 l    d  .text	00000000 .text
+00024980 l    d  .rodata	00000000 .rodata
+00026000 l    d  .eh_frame	00000000 .eh_frame
+000260b4 l    d  .init_array	00000000 .init_array
+000260bc l    d  .fini_array	00000000 .fini_array
+000260c0 l    d  .data	00000000 .data
+00026a60 l    d  .sdata	00000000 .sdata
+00026a8c l    d  .sbss	00000000 .sbss
+00026aa0 l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    df *ABS*	00000000 __call_atexit.c
+00010074 l     F .text	0000001c register_fini
+00000000 l    df *ABS*	00000000 crtstuff.c
+00026000 l     O .eh_frame	00000000 __EH_FRAME_BEGIN__
+000100d0 l     F .text	00000000 __do_global_dtors_aux
+00026aa0 l     O .bss	00000001 completed.5434
+000260bc l     O .fini_array	00000000 __do_global_dtors_aux_fini_array_entry
+00010120 l     F .text	00000000 frame_dummy
+00026aa4 l     O .bss	00000018 object.5439
+000260b8 l     O .init_array	00000000 __frame_dummy_init_array_entry
+00000000 l    df *ABS*	00000000 main.c
+00000000 l    df *ABS*	00000000 vstavka.c
+00000000 l    df *ABS*	00000000 atexit.c
+00000000 l    df *ABS*	00000000 exit.c
+00000000 l    df *ABS*	00000000 fini.c
+00000000 l    df *ABS*	00000000 impure.c
+000260c0 l     O .data	00000428 impure_data
+00000000 l    df *ABS*	00000000 init.c
+00000000 l    df *ABS*	00000000 printf.c
+00000000 l    df *ABS*	00000000 vfprintf.c
+00013014 l     F .text	000000c0 __sbprintf
+00024b04 l     O .rodata	00000010 blanks.4504
+00024b14 l     O .rodata	00000010 zeroes.4505
+00000000 l    df *ABS*	00000000 wsetup.c
+00000000 l    df *ABS*	00000000 __atexit.c
+00000000 l    df *ABS*	00000000 fflush.c
+00000000 l    df *ABS*	00000000 findfp.c
+000136d8 l     F .text	00000008 __fp_lock
+000136ec l     F .text	00000184 __sinit.part.0
+00013870 l     F .text	00000008 __fp_unlock
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 fwalk.c
+00000000 l    df *ABS*	00000000 ldtoa.c
+00013fe0 l     F .text	00000068 eshdn1
+00014048 l     F .text	00000070 eshup1
+000140b8 l     F .text	000000e0 m16m
+00014198 l     F .text	00000024 eisnan.part.0
+000141bc l     F .text	0000004c eneg
+00014208 l     F .text	00000040 eisneg
+00014248 l     F .text	000000e8 emovi
+00014330 l     F .text	0000011c ecmp
+0001444c l     F .text	0000001c eisinf.part.1
+00014468 l     F .text	000001ac eshift.part.3
+00014614 l     F .text	0000017c enormlz
+00014790 l     F .text	00000408 emdnorm
+00014b98 l     F .text	00000164 eiremain
+00014cfc l     F .text	000000b0 emovo.isra.6
+00014dac l     F .text	00000408 emul
+000151b4 l     F .text	00000504 ediv
+000156b8 l     F .text	00000144 e113toe.isra.8
+00024b68 l     O .rodata	00000014 ezero
+00024b7c l     O .rodata	00000014 eone
+00024b90 l     O .rodata	00000104 etens
+00024c94 l     O .rodata	00000104 emtens
+00024d98 l     O .rodata	00000022 bmask
+00000000 l    df *ABS*	00000000 localeconv.c
+00000000 l    df *ABS*	00000000 locale.c
+00000000 l    df *ABS*	00000000 makebuf.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 mbtowc_r.c
+00000000 l    df *ABS*	00000000 memchr.c
+00000000 l    df *ABS*	00000000 mlock.c
+00000000 l    df *ABS*	00000000 mprec.c
+00024df8 l     O .rodata	0000000c p05.3298
+00000000 l    df *ABS*	00000000 sbrkr.c
+00000000 l    df *ABS*	00000000 s_frexp.c
+00000000 l    df *ABS*	00000000 sprintf.c
+00000000 l    df *ABS*	00000000 stdio.c
+00000000 l    df *ABS*	00000000 strcpy.c
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 strncpy.c
+00000000 l    df *ABS*	00000000 vfprintf.c
+0002508c l     O .rodata	00000010 blanks.4489
+0002509c l     O .rodata	00000010 zeroes.4490
+00000000 l    df *ABS*	00000000 vfprintf.c
+0001b92c l     F .text	000000f0 __sprint_r.part.0
+0001cd1c l     F .text	000000c0 __sbprintf
+00025218 l     O .rodata	00000010 blanks.4480
+00025228 l     O .rodata	00000010 zeroes.4481
+00000000 l    df *ABS*	00000000 wctomb_r.c
+00000000 l    df *ABS*	00000000 writer.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 closer.c
+00000000 l    df *ABS*	00000000 ctype_.c
+00000000 l    df *ABS*	00000000 fclose.c
+00000000 l    df *ABS*	00000000 fputwc.c
+00000000 l    df *ABS*	00000000 fstatr.c
+00000000 l    df *ABS*	00000000 fvwrite.c
+00000000 l    df *ABS*	00000000 isattyr.c
+00000000 l    df *ABS*	00000000 lseekr.c
+00000000 l    df *ABS*	00000000 memcpy.c
+00000000 l    df *ABS*	00000000 memmove-stub.c
+00000000 l    df *ABS*	00000000 readr.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 reent.c
+00000000 l    df *ABS*	00000000 vfprintf.c
+000254a8 l     O .rodata	00000010 blanks.4466
+000254b8 l     O .rodata	00000010 zeroes.4467
+00000000 l    df *ABS*	00000000 wbuf.c
+00000000 l    df *ABS*	00000000 wcrtomb.c
+00000000 l    df *ABS*	00000000 sys_close.c
+00000000 l    df *ABS*	00000000 sys_exit.c
+00000000 l    df *ABS*	00000000 sys_fstat.c
+00000000 l    df *ABS*	00000000 sys_isatty.c
+00000000 l    df *ABS*	00000000 sys_lseek.c
+00000000 l    df *ABS*	00000000 sys_read.c
+00000000 l    df *ABS*	00000000 sys_sbrk.c
+00026a9c l     O .sbss	00000004 heap_end.1862
+00000000 l    df *ABS*	00000000 sys_write.c
+00000000 l    df *ABS*	00000000 sys_conv_stat.c
+00000000 l    df *ABS*	00000000 errno.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 divdf3.c
+00000000 l    df *ABS*	00000000 muldf3.c
+00000000 l    df *ABS*	00000000 eqtf2.c
+00000000 l    df *ABS*	00000000 getf2.c
+00000000 l    df *ABS*	00000000 letf2.c
+00000000 l    df *ABS*	00000000 multf3.c
+00000000 l    df *ABS*	00000000 subtf3.c
+00000000 l    df *ABS*	00000000 fixtfsi.c
+00000000 l    df *ABS*	00000000 floatsitf.c
+00000000 l    df *ABS*	00000000 extenddftf2.c
+00000000 l    df *ABS*	00000000 trunctfdf2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 crtstuff.c
+000260b0 l     O .eh_frame	00000000 __FRAME_END__
+00000000 l    df *ABS*	00000000 
+000260c0 l       .fini_array	00000000 __fini_array_end
+000260bc l       .fini_array	00000000 __fini_array_start
+000260bc l       .init_array	00000000 __init_array_end
+000260b4 l       .init_array	00000000 __preinit_array_end
+000260b4 l       .init_array	00000000 __init_array_start
+000260b4 l       .init_array	00000000 __preinit_array_start
+0001864c g     F .text	0000009c _mprec_log10
+00018750 g     F .text	00000078 __any_on
+0001d7a8 g     F .text	00000054 _isatty_r
+00024ed0 g     O .rodata	00000028 __mprec_tinytens
+00018c8c g     F .text	000000b0 strcpy
+0001e0c8 g     F .text	00000040 cleanup_glue
+0001d7fc g     F .text	00000060 _lseek_r
+000214b0 g     F .text	00000144 .hidden __getf2
+000213e4 g     F .text	000000cc .hidden __eqtf2
+000104bc g     F .text	00000054 printf
+000268c0 g       *ABS*	00000000 __global_pointer$
+0001f64c g     F .text	00000078 _wcrtomb_r
+00018aa0 g     F .text	00000068 __sseek
+00013a08 g     F .text	00000010 __sinit
+0001f4b4 g     F .text	00000184 __swbuf_r
+00016b6c g     F .text	0000007c _setlocale_r
+00013878 g     F .text	00000078 __sfmoreglue
+00017714 g     F .text	00000004 __malloc_unlock
+00024194 g     F .text	00000188 .hidden __floatsitf
+0001d978 g     F .text	00000120 memmove
+000139f4 g     F .text	00000014 _cleanup
+00017718 g     F .text	000000a8 _Balloc
+0001fad4 g     F .text	0000000c __errno
+0001fa30 g     F .text	000000a4 _conv_stat
+00016b54 g     F .text	00000008 __localeconv_l
+0001d290 g     F .text	0000005c _fstat_r
+00026ae4 g     O .bss	00000004 errno
+00018a10 g     F .text	00000008 __seofread
+00026a60 g       .sdata	00000000 __SDATA_BEGIN__
+0001d85c g     F .text	0000011c memcpy
+000136e0 g     F .text	0000000c _cleanup_r
+00018e94 g     F .text	00002a98 _svfprintf_r
+000185a8 g     F .text	000000a4 __ratio
+00010478 g     F .text	00000044 _printf_r
+000215f4 g     F .text	00000144 .hidden __letf2
+00024884 g     F .text	00000048 .hidden __udivsi3
+0001f7f0 g     F .text	00000070 _fstat
+00024e08 g     O .rodata	000000c8 __mprec_tens
+00026a98 g     O .sbss	00000004 __malloc_top_pad
+00026a7c g     O .sdata	00000000 .hidden __dso_handle
+00016b5c g     F .text	00000008 _localeconv_r
+0001d2ec g     F .text	000004bc __sfvwrite_r
+00017b78 g     F .text	00000034 __i2b
+000187c8 g     F .text	00000054 _sbrk_r
+0001da98 g     F .text	00000060 _read_r
+0001cf94 g     F .text	00000110 _fclose_r
+000136b0 g     F .text	00000028 fflush
+00026a94 g     O .sbss	00000004 __malloc_max_sbrked_mem
+0001834c g     F .text	00000118 __b2d
+000200b4 g     F .text	000004f0 .hidden __umoddi3
+0001f860 g     F .text	00000040 _isatty
+00026a78 g     O .sdata	00000004 _global_impure_ptr
+0001daf8 g     F .text	000005d0 _realloc_r
+00010308 g     F .text	00000094 __libc_init_array
+0001fae0 g     F .text	000005d4 .hidden __udivdi3
+0001d1e0 g     F .text	0000002c _fputwc_r
+00024ef8 g     O .rodata	00000028 __mprec_bigtens
+0001793c g     F .text	00000110 __s2b
+0001f940 g     F .text	000000a0 _sbrk
+000180ac g     F .text	0000005c __mcmp
+00013a28 g     F .text	00000014 __fp_lock_all
+000102a8 g     F .text	00000060 __libc_fini_array
+0001e108 g     F .text	00000110 _reclaim_reent
+00017a4c g     F .text	00000074 __hi0bits
+00024044 g     F .text	00000150 .hidden __fixtfsi
+00017e18 g     F .text	00000148 __pow5mult
+000248cc g     F .text	00000010 .hidden __umodsi3
+00024930 g     F .text	0000004c .hidden __clzsi2
+00013a18 g     F .text	00000004 __sfp_lock_acquire
+00017634 g     F .text	000000dc memchr
+000188cc g     F .text	0000006c _sprintf_r
+00013b78 g     F .text	000002f8 _free_r
+00016be8 g     F .text	00000008 __locale_mb_cur_max
+000132d8 g     F .text	0000011c __call_exitprocs
+00026a84 g     O .sdata	00000004 __malloc_sbrk_base
+00010090 g     F .text	00000040 _start
+0001f8a0 g     F .text	00000050 _lseek
+00017f60 g     F .text	0000014c __lshift
+000215f4 g     F .text	00000144 .hidden __lttf2
+000213e4 g     F .text	000000cc .hidden __netf2
+0001e218 g     F .text	000001bc __ssprint_r
+0001323c g     F .text	0000009c __register_exitproc
+00016af0 g     F .text	00000064 _ldcheck
+00017bac g     F .text	0000026c __multiply
+00024858 g     F .text	00000024 .hidden __mulsi3
+00018dc8 g     F .text	000000cc strncpy
+00026abc g     O .bss	00000028 __malloc_current_mallinfo
+00018464 g     F .text	00000144 __d2b
+0002431c g     F .text	00000208 .hidden __extenddftf2
+0001cf40 g     F .text	00000054 _close_r
+000130d4 g     F .text	00000168 __swsetup_r
+000205a4 g     F .text	000007d0 .hidden __divdf3
+000138f0 g     F .text	00000104 __sfp
+000186e8 g     F .text	00000068 __copybits
+00026ae8 g       .bss	00000000 __BSS_END__
+00026654 g     O .data	00000408 __malloc_av_
+00013a24 g     F .text	00000004 __sinit_lock_release
+00020d74 g     F .text	00000670 .hidden __muldf3
+000189b4 g     F .text	0000005c __sread
+00017710 g     F .text	00000004 __malloc_lock
+00013650 g     F .text	00000060 _fflush_r
+0001ce78 g     F .text	000000c8 _calloc_r
+00026a8c g       .sbss	00000000 __bss_start
+0001039c g     F .text	000000dc memset
+00010144 g     F .text	0000008c main
+00026a90 g     O .sbss	00000004 __malloc_max_total_mem
+0001f638 g     F .text	00000014 __swbuf
+00018b08 g     F .text	00000008 __sclose
+0001d0a4 g     F .text	00000010 fclose
+00016df4 g     F .text	000007cc _malloc_r
+0001cde8 g     F .text	00000030 __ascii_wctomb
+00013e70 g     F .text	000000b0 _fwalk
+000175c0 g     F .text	0000000c _mbtowc_r
+0002487c g     F .text	00000084 .hidden __divsi3
+00013a50 g     F .text	00000128 _malloc_trim_r
+00018b10 g     F .text	0000017c strcmp
+0001cd04 g     F .text	00000018 vfiprintf
+00021738 g     F .text	0000136c .hidden __multf3
+00018938 g     F .text	0000007c sprintf
+0002557c g     O .rodata	00000100 .hidden __clz_tab
+00026a8c g     O .sbss	00000004 _PathLocale
+00010260 g     F .text	00000014 atexit
+0001ce18 g     F .text	00000060 _write_r
+00016bf0 g     F .text	00000014 setlocale
+00026a80 g     O .sdata	00000004 _impure_ptr
+000133f4 g     F .text	0000025c __sflush_r
+000214b0 g     F .text	00000144 .hidden __gttf2
+0001e3d4 g     F .text	000010e0 _svfiprintf_r
+000175cc g     F .text	00000068 __ascii_mbtowc
+00022aa4 g     F .text	000015a0 .hidden __subtf3
+000182ec g     F .text	00000060 __ulp
+00013a3c g     F .text	00000014 __fp_unlock_all
+00016b64 g     F .text	00000008 localeconv
+00016c04 g     F .text	000000d0 __swhatbuf_r
+000260c0 g       .data	00000000 __DATA_BEGIN__
+0001f9e0 g     F .text	00000050 _write
+00026a8c g       .sdata	00000000 _edata
+000101d0 g     F .text	00000090 sorting_by_insertion
+00026ae8 g       .bss	00000000 _end
+0001d0b4 g     F .text	0000012c __fputwc
+00018a18 g     F .text	00000088 __swrite
+00026a88 g     O .sdata	00000004 __malloc_trim_threshold
+00010274 g     F .text	00000034 exit
+0001ba34 g     F .text	000012d0 _vfiprintf_r
+00013f20 g     F .text	000000c0 _fwalk_reent
+00018108 g     F .text	000001e4 __mdiff
+00024900 g     F .text	00000030 .hidden __modsi3
+00013a1c g     F .text	00000004 __sfp_lock_release
+000157fc g     F .text	000012f4 _ldtoa_r
+00025238 g     O .rodata	00000101 _ctype_
+0001f8f0 g     F .text	00000050 _read
+0001f7ac g     F .text	00000044 _exit
+00016cd4 g     F .text	00000120 __smakebuf_r
+00018d3c g     F .text	0000008c strlen
+0001ba1c g     F .text	00000018 __sprint_r
+0001cddc g     F .text	0000000c _wctomb_r
+00010510 g     F .text	00002aec _vfprintf_r
+00017ac0 g     F .text	000000b8 __lo0bits
+0001f6c4 g     F .text	00000090 wcrtomb
+0001881c g     F .text	000000b0 frexp
+000264e8 g     O .data	0000016c __global_locale
+00012ffc g     F .text	00000018 vfprintf
+00024524 g     F .text	00000334 .hidden __trunctfdf2
+0001d20c g     F .text	00000084 fputwc
+0001f754 g     F .text	00000058 _close
+00013a20 g     F .text	00000004 __sinit_lock_acquire
+000177e4 g     F .text	00000158 __multadd
+000177c0 g     F .text	00000024 _Bfree
+
+

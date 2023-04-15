@@ -1,0 +1,88 @@
+riscv64-unknown-elf-gcc-8.3.0.exe .\vstavka.c --save-temps -march=rv32i -mabi=ilp32 -O1 -v >log 2>&1 
+Файл log (процесс сборки программы)
+
+riscv64-unknown-elf-gcc --save-temps -march=rv32i -mabi=ilp32 -O1 -v main.c vstavka.c >log 2>&1
+(создает все файлы main.i, zero.i;
+main.s, zero.s;
+main.o, zero.o;
+a.out;
+log.)
+
+riscv64-unknown-elf-objdump -t vstavka.o main.o
+(Таблица символов)
+
+riscv64-unknown-elf-objdump –d –M no-aliases –j .text vstavka.o main.o
+(диссассемблирование секции text )(Дизассемблирование – преобразование программы на машинном языке к ее ассемблерному представлению.)
+
+riscv64-unknown-elf-objdump.exe -f vstavka.o
+(содержание что в нем находится)
+
+riscv64-unknown-elf-objdump.exe -h vstavka.o
+(Секции объектных файлов vstavka.o => итоговый файл с помощью компановки)
+
+riscv64-unknown-elf-objdump.exe -s -j .text vstavka.o
+(Изучим содержимое секции “.text” файла vstavka.o)
+
+riscv64-unknown-elf-objdump.exe -d -M no-aliases -j .text vstavka.o
+(декодирование инструкиции Секция text файлов vstavka.o при помощи Эвм)
+
+riscv64-unknown-elf-objdump.exe -s -j .comment vstavka.o
+(Изучим содержимое секции “.comment”: файла vstavka.o)
+
+6. вывод компановщика a.out
+riscv64-unknown-elf-objdump.exe -f .\a.out
+(содержимое a.out)
+
+riscv64-unknown-elf-objdump.exe -h .\a.out
+(изучаем секции файла a.out)
+
+riscv64-unknown-elf-objdump.exe -j .text -d -M no-aliases a.out >a.ds
+(результат компановки переведенный в текст (изучим содержимое секции .text => a.ds))
+
+
+сборка программы
+драйвер компилятора, и контролировать его действия, используя флаг “-v”.
+
+А. Препроцессирование
+riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -E vstavka.c -o vstavka.i >log 2>&1
+Препроцессирование
+
+Компиляция
+Далее необходимо выполнить компиляцию файла “gray.i”, сохранив результат – сгенерированный код на языке ассемблера – в файл “gray.s”.
+riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -S vstavka.i -o vstavka.s >log 2>&1
+
+
+C. Ассемблирование
+Ассемблирование файла “gray.s” 
+riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v -c vstavka.s -o vstavka.o >log 2>&1
+
+D. Компоновка
+//riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.o vstavka.exe >log 2>&1
+riscv64-unknown-elf-gcc-ar.exe -rsc vstav.a vstavka.o 
+(создаем библиотеку vstav.a)
+
+
+3. Раздельная компиляция
+сборка программы
+
+riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -v main.c vstavka.c >log 2>&1
+(создание файлов a.out log)
+
+riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -c vstavka.c -o vstavka.o
+(создание vstavka.o выполнить все стадии обработки исходного файла, получив в результате объектный файл)
+
+riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 -c main.c -o vstavka.o
+(После создания объектного файла его нужно скомпоновать с нашей программой)
+
+
+d. Создание и использование статической библиотеки
+riscv64-unknown-elf-ar.exe -rsc vstav.a vstavka.o (помещаем vstavka.o в статическую библиотеку)
+
+riscv64-unknown-elf-gcc-8.3.0.exe -march=rv32i -mabi=ilp32 -O1 --save-temps  main.c .\vstav.a -o static.out
+Используем статическую библиотеку для сборки программ (создание файлов main.o main.s main.i static.out)
+
+riscv64-unknown-elf-objdump.exe -t .\static.out > _symtable
+(таблицы символов полученных исполняемых файлов) сборки объектных файлов была возложена на компоновщик (а не нас).
+
+3. Makefile
+mingw32-make.exe
